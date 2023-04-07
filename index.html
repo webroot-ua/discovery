@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=400, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<title>Школа для обдарованих дітей - Discovery</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+		}
+		nav {
+			background-color: #0B0D17;
+			height: 60px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 50px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 999;
+      margin: 0;
+		}
+		nav img {
+			height: 50px;
+		}
+    .image-container {
+      border: 5px solid;
+      border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      border-image-slice: 1;
+      display: inline-block;
+      padding: 0;
+    }
+    @keyframes change-color {
+      0% {
+        border-image-source: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      }
+      14.28% {
+        border-image-source: linear-gradient(to right, violet, red, orange, yellow, green, blue, indigo);
+      }
+      28.56% {
+        border-image-source: linear-gradient(to right, indigo, violet, red, orange, yellow, green, blue);
+      }
+      42.84% {
+        border-image-source: linear-gradient(to right, blue, indigo, violet, red, orange, yellow, green);
+      }
+      57.12% {
+        border-image-source: linear-gradient(to right, green, blue, indigo, violet, red, orange, yellow);
+      }
+      71.4% {
+        border-image-source: linear-gradient(to right, yellow, green, blue, indigo, violet, red, orange);
+      }
+      85.68% {
+        border-image-source: linear-gradient(to right, orange, yellow, green, blue, indigo, violet, red);
+      }
+      100% {
+        border-image-source: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      }
+    }
+
+    .image-container {
+      animation: change-color 1s linear infinite;
+    }
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+		nav ul li a {
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			padding: 0 20px;
+			line-height: 60px;
+			font-size: 18px;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+		nav ul li a:hover {
+			background-color: #fff;
+			color: #333;
+		}
+		header {
+			background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+			background-size: cover;
+			background-position: center;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		header h1 {
+			color: #fff;
+			font-size: 60px;
+			font-weight: 700;
+			text-align: center;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			margin: 0;
+			padding: 0;
+			line-height: 1.2;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			animation: fadeInDown 1s ease;
+		}
+		@keyframes fadeInDown {
+			0% {
+				transform: translateY(-100%);
+				opacity: 0;
+			}
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+		section {
+			background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: relative;
+			z-index: 1;
+      width: 100%;
+		}
+		section h2 {
+			color: #fff;
+			font-size: 40px;
+			font-weight: 700;
+			text-align: center;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			margin: 0;
+			padding: 0;
+			line-height: 1.2;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			animation: fadeInUp 1s ease;
+		}
+		@keyframes fadeInUp {
+			0% {
+				transform: translateY(100%);
+				opacity: 0;
+			}
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+		section p {
+			color: #fff;
+			font-size: 20px;
+			font-weight: 300;
+			text-align: justify;
+			margin: 20px 0;
+			line-height: 1.5;
+			animation: fadeIn 1s ease;
+		}
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		section button {
+			background-color: #fff;
+			color: #333;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: 500;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			animation: fadeIn 1s ease;
+			transition: all 0.3s ease;
+		}
+		section button:hover {
+			transform: translateY(-5px);
+			box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+		}
+		section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,0.5);
+			z-index: -1;
+		}
+		section:nth-of-type(1) {
+			background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+		}
+		section:nth-of-type(2) {
+			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+		}
+    /*
+		section:nth-of-type(3) {
+			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+		}
+    */
+		section:nth-of-type(4) {
+			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+		}
+    
+		section:nth-of-type(5) {
+			background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+		}
+  section ul li {
+			color: #fff;
+      font-size: 1.2em;
+  }
+		footer {
+			background-color: #0E1218;
+			color: #fff;
+			padding: 50px;
+			font-size: 18px;
+			line-height: 1.5;
+			text-align:justify;
+			z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+		}
+		footer a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+		footer a:hover {
+			color: #f00;
+		}
+    footer ul li {
+      /* display: inline; */
+      margin: 10px;
+  }
+    footer ul li a:hover {
+		transform: translateY(-5px);
+		box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  footer p {
+		color: #fff;
+		font-size: 16px;
+		font-weight: 300;
+		margin: 20px 0 0 0;
+		padding: 0;
+	}
+  .column {
+  flex: 1;
+  margin: 0;
+}
+  @media screen and (max-width: 768px) {
+		nav {
+			padding: 0 2px;
+		}
+		nav img {
+			height: 40px;
+		}
+		nav ul li a {
+			font-size: 16px;
+			padding: 0 10px;
+		}
+		header h1 {
+			font-size: 40px;
+		}
+		section h2 {
+			font-size: 32px;
+		}
+		section p {
+			font-size: 16px;
+		}
+		section button {
+			font-size: 16px;
+		}
+		section ul li {
+			font-size: 14px;
+		}
+		footer {
+			padding: 0;
+			font-size: 14px;
+		}
+		footer ul li a {
+			font-size: 20px;
+			padding: 5px 20px;
+		}
+		footer h2 {
+      padding-top: 20px;
+		}
+		footer p {
+      padding: 15px 0;
+			font-size: 14px;
+		}
+	}
+  .centerfoot {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    text-align: center;
+  }
+  .hrfoot {
+    width: 90%;
+  }
+  /* galery */
+  .slider-container {
+			position: relative;
+      max-width: 500px;
+		}
+
+		.slider {
+			width: 100%;
+			height: 600px;
+			overflow: hidden;
+		}
+
+		.slider img {
+			width: 100%;
+			height: 100%;
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.slider img:first-child {
+			display: block;
+		}
+
+		.prev, .next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 30px;
+			font-weight: bold;
+			text-decoration: none;
+			color: white;
+			background-color: rgba(0,0,0,0.5);
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		.prev {
+			left: 0;
+		}
+
+		.next {
+			right: 0;
+		}
+  /* galery 2*/
+  .slider-container2 {
+			position: relative;
+      max-width: 700px;
+		}
+
+		.slider2 {
+			width: 100%;
+			height: 400px;
+			overflow: hidden;
+		}
+
+		.slider2 img {
+			width: 100%;
+			height: 100%;
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.slider2 img:first-child {
+			display: block;
+		}
+
+		.prev2, .next2 {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 30px;
+			font-weight: bold;
+			text-decoration: none;
+			color: white;
+			background-color: rgba(0,0,0,0.5);
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		.prev2 {
+			left: 0;
+		}
+
+		.next2 {
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+    <div class="image-container">
+    <a href="#home">
+      <img src="/images/discovery-logo.png" alt="discovery-logo">
+    </a>
+  </div>
+		<ul>
+			<!-- <li><a href="#home">Discovery</a></li> -->
+			<li><a href="#about">Інформація</a></li>
+			<li><a href="#programs">Програма</a></li>
+			<li><a href="#stem">STEM</a></li>
+			<li><a href="#advantages">Переваги</a></li>
+			<li><a href="#galery">Галерея</a></li>
+			<!-- <li><a href="#contacts">Контакти</a></li> -->
+		</ul>
+	</nav>
+	<header id="home">
+		<h1>Ласкаво просимо <br />до школи для обдарованих дітей</h1>
+	</header>
+	<section id="about">
+    <div class="container">
+      <h2>Discovery School <br />Перша альтернативна школа в Обухові</h2>
+      <p class="fst-italic font-monospace text-center">Ми - школа для обдарованих дітей, яка прагне забезпечити найкращу освіту та підтримку, <br />щоб допомогти нашим учням повністю розкрити свій потенціал.</p>
+      <p class="font-monospace">Пропонуємо для Вас та Ваших дітей:</p>
+      <ul>
+        <li>Початкова школа (1-4 класи)</li>
+        <li>Середня школа з 2022/23 н.р.</li>
+        <li>Дошкільні групи Preschool (від 4 і від 5 років)</li>
+        <li>Центр підготовки до школи</li>
+      </ul>
+
+      <p class="font-monospace">У Discovery school:</p>
+      <ul>
+        <li>дитина вчиться із задоволенням</li>
+        <li>її поважають, підтримують, пишаються нею</li>
+        <li>піклуються про її здоров’я</li>
+        <li>розвивають інтелектуально, фізично і творчо.</li>
+      </ul>
+    </div>
+	</section>
+	<section id="programs">
+    <div class="container">
+      <h2>Програма навчання</h2>
+      <p class="font-monospace text-center">Предмети за програмою МОН України. Видаються документи державного зразка.</p>
+      <p class="">Ми пропонуємо низку програм для задоволення різноманітних потреб і талантів наших студентів, у тому числі:</p>
+        <ul>
+          <li>Поглиблена англійська з Green Country</li>
+          <li>Ігрова математика, логіка</li>
+          <li>Проєктна, дослідницька діяльність</li>
+          <li>ІТ та основи програмування з ІІ класу</li>
+          <li>Фінансова грамотність з ІІІ класу</li>
+          <li>Заняття з психологом</li>
+          <li>Живопис, ленд-арт </li>
+          <li>Музика, вокал, театр</li>
+          <li>Йога, змішані єдиноборства</li>
+          <li>Кулінарна майстерність</li>
+          <li>Екскурсії, походи, пікніки, майстер-класи...</li>
+        </ul>
+      </div>
+	</section>
+  <section id="stem">
+    <div class="container">
+      <h2>STEM освіта</h2>
+      <div class="row d-flex justify-content-around">
+        <div class="slider-container">
+          <div class="slider">
+            <img src="/images/stem1.jpg">
+            <img src="/images/stem2.jpg">
+            <img src="/images/stem3.jpg">
+            <img src="/images/stem4.jpg">
+            <img src="/images/stem5.jpg">
+          </div>
+          <a class="prev" href="javascript:void(0)">❮</a>
+          <a class="next" href="javascript:void(0)">❯</a>
+        </div>
+      </div>
+    </div>
+	</section>
+	<section id="advantages">
+    <div class="container">
+      <h2>Переваги нашої школи</h2>
+      <br />
+      <br />
+        <ul>
+          <li>маленькі класи</li>
+          <li>різнобічна навчальна програма</li>
+          <li>тьюторська та кураторська підтримка</li>
+          <li>вдало складений розклад без перевантажень</li>
+          <li>багато прогулянок</li>
+          <li>повний день з 8:30 до 18:00</li>
+          <li>виконання домашніх завдань у школі</li>
+          <li>успішний досвід дистанційного навчання під час карантину</li>
+        </ul>
+        <br />
+        <br />
+      <button onclick="location.href='/doc/privacy-policy.docx'" title="Завантажити документ">Юридична інформація</button>
+    </div>
+	</section>
+	<section id="galery">
+    <div class="container">
+
+      <h2>Галерея нашої школи</h2>
+      <br />
+      <div class="row d-flex justify-content-around">
+        <div class="slider-container2">
+          <div class="slider2">
+            <img src="images/wellcome-to-discovery.jpg">
+            <img src="images/discovery-teachers.jpg">
+            <img src="images/discover-future.jpg">
+            <img src="images/discovery-hub.jpg">
+            <img src="images/3-class.jpg">
+            <img src="images/discovery-sport.jpg">
+          </div>
+          <a class="prev2" href="javascript:void(0)">❮</a>
+          <a class="next2" href="javascript:void(0)">❯</a>
+        </div>
+      </div>
+    </div>
+	</section>
+	<footer id="contacts">
+    <div class="column">
+      <div class="centerfoot">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9138025518705!2d30.639053615894312!3d50.12720457943203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4971b32f66721%3A0xcfc45dad98ddaa7a!2z0KHQvtGB0L3QvtCy0LjQuSDQvNGW0LrRgNC-0YDQsNC50L7QvSwgMiwg0J7QsdGD0YXRltCyLCDQmtC40ZfQstGB0YzQutCwINC-0LHQuy4sIDA4NzAx!5e1!3m2!1sru!2sua!4v1680878584716!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <br />
+      <!-- <div id="window-size" class="text-center text-success"></div> -->
+    </div>
+    <div class="column">
+      <h2 class="centerfoot">Контактна інформація для батьків</h2>
+      <p class="m-3">Якщо у вас виникли запитання або ви хочете запланувати візит, будь ласка, не соромтеся зв’язатися з нами!</p>
+      <hr class="hrfoot" />
+      <ul>
+        <li>Мобільний телефон: 050 709 3922</li>
+        <li>Наша адреса: м.Обухів, мікрорайон Сосновий, 2</li>
+        <li>Працюємо: повний день з 8:30 до 18:00</li>
+      </ul>
+      <hr class="hrfoot" />
+      <p class="centerfoot"> Приватна школа для обдарованих дітей Discovery. <br />Всі права захищені &copy; 2023</p>
+    </div>
+	</footer>
+  <script>
+		function updateWindowSize() {
+			var windowWidth = window.innerWidth;
+			var windowHeight = window.innerHeight;
+			var windowSizeDiv = document.getElementById("window-size");
+			windowSizeDiv.innerHTML = "screen: " + windowWidth + "x" + windowHeight;
+		}
+		updateWindowSize();
+		setInterval(updateWindowSize, 100);
+	</script>
+  <script>
+		window.onload = function() {
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+				var len = slides.length;
+
+				if (n > len) {
+					slideIndex = 1;
+				}
+				if (n < 1) {
+					slideIndex = len;
+				}
+				for (i = 0; i < len; i++) {
+					slides[i].style.display = "none";
+				}
+				slides[slideIndex - 1].style.display = "block";
+			}
+
+			document.getElementsByClassName("prev")[0].onclick = function() {
+				showSlides(slideIndex -= 1);
+			};
+
+			document.getElementsByClassName("next")[0].onclick = function() {
+				showSlides(slideIndex += 1);
+			};
+
+			setInterval(function() {
+				showSlides(slideIndex += 1);
+			}, 5000);
+/* */
+			var slideIndex2 = 1;
+			showSlides2(slideIndex2);
+
+			function showSlides2(n) {
+				var i2;
+				var slides2 = document.getElementsByClassName("slider2")[0].getElementsByTagName("img");
+				var len2 = slides2.length;
+
+				if (n > len2) {
+					slideIndex2 = 1;
+				}
+				if (n < 1) {
+					slideIndex2 = len2;
+				}
+				for (i2 = 0; i2 < len2; i2++) {
+					slides2[i2].style.display = "none";
+				}
+				slides2[slideIndex2 - 1].style.display = "block";
+			}
+
+			document.getElementsByClassName("prev2")[0].onclick = function() {
+				showSlides2(slideIndex2 -= 1);
+			};
+
+			document.getElementsByClassName("next2")[0].onclick = function() {
+				showSlides2(slideIndex2 += 1);
+			};
+
+			setInterval(function() {
+				showSlides2(slideIndex2 += 1);
+			}, 5000);
+		};
+	</script>  
+</body>
+</html>
