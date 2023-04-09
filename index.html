@@ -366,51 +366,55 @@
 		.next {
 			right: 0;
 		}
-  /* galery 2*/
-  .slider-container2 {
-			position: relative;
-      max-width: 700px;
-		}
-
-		.slider2 {
-			width: 100%;
-			height: 400px;
-			overflow: hidden;
-		}
-
-		.slider2 img {
-			width: 100%;
-			height: 100%;
-			display: none;
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-
-		.slider2 img:first-child {
-			display: block;
-		}
-
-		.prev2, .next2 {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			font-size: 30px;
-			font-weight: bold;
-			text-decoration: none;
-			color: white;
-			background-color: rgba(0,0,0,0.5);
-			padding: 10px;
-			cursor: pointer;
-		}
-
-		.prev2 {
-			left: 0;
-		}
-
-		.next2 {
-			right: 0;
-		}
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .gallery img {
+        width: 250px;
+        height: 250px;
+        margin: 10px;
+        object-fit: cover;
+        border: 3px solid #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        filter: grayscale(50%);
+    }
+    .gallery img:hover {
+        border: 3px solid #ff8b00;
+        cursor: pointer;
+        filter: grayscale(0%);
+    }
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .lightbox img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        border: 3px solid #fff;
+        border-radius: 5px;
+    }
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 	</style>
 </head>
 <body>
@@ -517,20 +521,20 @@
 
       <h2>Галерея нашої школи</h2>
       <br />
-      <div class="row d-flex justify-content-around">
-        <div class="slider-container2">
-          <div class="slider2">
-            <img src="images/wellcome-to-discovery.jpg">
-            <img src="images/discovery-teachers.jpg">
-            <img src="images/discover-future.jpg">
-            <img src="images/discovery-hub.jpg">
-            <img src="images/3-class.jpg">
-            <img src="images/discovery-sport.jpg">
-          </div>
-          <a class="prev2" href="javascript:void(0)">❮</a>
-          <a class="next2" href="javascript:void(0)">❯</a>
-        </div>
-      </div>
+      <div class="gallery">
+        <img src="../images/discovery-teachers.jpg" alt="image2">
+        <img src="../images/discovery-hub.jpg" alt="image1">
+        <img src="../images/discovery-school-classes.jpg" alt="image3">
+        <img src="../images/discover-future.jpg" alt="image4">
+        <img src="../images/wellcome-to-discovery.jpg" alt="image5">
+        <img src="../images/discovery-sport.jpg" alt="image6">
+        <img src="../images/2class.jpg" alt="image6">
+        <img src="../images/3-class.jpg" alt="image6">
+    </div>
+    <div class="lightbox">
+      <span class="close-btn">&times;</span>
+      <img src="#" alt="lightbox image">
+  </div>
     </div>
 	</section>
 	<footer id="contacts">
@@ -539,7 +543,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9138025518705!2d30.639053615894312!3d50.12720457943203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4971b32f66721%3A0xcfc45dad98ddaa7a!2z0KHQvtGB0L3QvtCy0LjQuSDQvNGW0LrRgNC-0YDQsNC50L7QvSwgMiwg0J7QsdGD0YXRltCyLCDQmtC40ZfQstGB0YzQutCwINC-0LHQuy4sIDA4NzAx!5e1!3m2!1sru!2sua!4v1680878584716!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <br />
-      <!-- <div id="window-size" class="text-center text-success"></div> -->
+      <div id="window-size" class="text-center text-dark"></div>
     </div>
     <div class="column">
       <h2 class="centerfoot">Контактна інформація для батьків</h2>
@@ -554,6 +558,7 @@
       <p class="centerfoot"> Приватна школа для обдарованих дітей Discovery. <br />Всі права захищені &copy; 2023</p>
     </div>
 	</footer>
+  
   <script>
 		function updateWindowSize() {
 			var windowWidth = window.innerWidth;
@@ -597,39 +602,26 @@
 			setInterval(function() {
 				showSlides(slideIndex += 1);
 			}, 5000);
-/* */
-			var slideIndex2 = 1;
-			showSlides2(slideIndex2);
-
-			function showSlides2(n) {
-				var i2;
-				var slides2 = document.getElementsByClassName("slider2")[0].getElementsByTagName("img");
-				var len2 = slides2.length;
-
-				if (n > len2) {
-					slideIndex2 = 1;
-				}
-				if (n < 1) {
-					slideIndex2 = len2;
-				}
-				for (i2 = 0; i2 < len2; i2++) {
-					slides2[i2].style.display = "none";
-				}
-				slides2[slideIndex2 - 1].style.display = "block";
-			}
-
-			document.getElementsByClassName("prev2")[0].onclick = function() {
-				showSlides2(slideIndex2 -= 1);
-			};
-
-			document.getElementsByClassName("next2")[0].onclick = function() {
-				showSlides2(slideIndex2 += 1);
-			};
-
-			setInterval(function() {
-				showSlides2(slideIndex2 += 1);
-			}, 5000);
 		};
 	</script>  
+  <script>
+    const gallery = document.querySelector('.gallery');
+    const images = document.querySelectorAll('.gallery img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImage = document.querySelector('.lightbox img');
+    const closeBtn = document.querySelector('.lightbox');
+
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            const src = image.getAttribute('src');
+            lightboxImage.setAttribute('src', src);
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
