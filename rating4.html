@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рейтинг учнів 4-го класу школи Discovery</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<style>
+    .parallax {
+        background-image: url('images/background.jpg');
+        min-height: 600px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    .container {
+        padding: 20px;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .title {
+        opacity: 0.8; 
+/*        background-color: rgb(10, 20, 22);*/
+        min-height: 50px;
+        background-image: url('images/informatyka.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        border-radius: 10%;
+        padding: 25px;
+        width: 50%;
+        min-width: 300px;
+        margin: 30px auto;
+    }
+    .student-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .grade {
+        font-size: 24px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+</style>
+</head>
+<body>
+
+<div class="parallax">
+    <div class="container">
+        <h1 class="title">Успіхи учнів 4-го класу по інформатиці</h1>
+        <div id="students"></div>
+    </div>
+</div>
+
+<script>
+    const studentsData = [
+        { name: "Марк", photo: "mark.jpg", grade: 97 },
+        { name: "Віталіна", photo: "vitalina.jpg", grade: 92 },
+        { name: "Матвій", photo: "matvij.jpg", grade: 88 },
+        { name: "Микола", photo: "mykola.jpg", grade: 85 },
+        { name: "Іванка", photo: "ivanka.jpg", grade: 80 },
+        { name: "Макар", photo: "makar.jpg", grade: 78 },
+    ];
+
+    function addStudent(student) {
+        const studentDiv = document.createElement("div");
+        const studentImg = document.createElement("img");
+        studentImg.src = 'images/' + student.photo;
+        studentImg.alt = student.name;
+        studentImg.classList.add("student-img");
+        const gradeParagraph = document.createElement("p");
+        gradeParagraph.textContent = `${student.name}: ${student.grade} балів`;
+        gradeParagraph.classList.add("grade");
+        studentDiv.appendChild(studentImg);
+        studentDiv.appendChild(gradeParagraph);
+        document.getElementById("students").appendChild(studentDiv);
+    }
+
+    studentsData.forEach(student => {
+        addStudent(student);
+    });
+</script>
+
+</body>
+</html>
