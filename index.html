@@ -201,15 +201,15 @@
 		}
 		section:nth-of-type(1) {
 			background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      position: relative;
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: relative;
 		}
 		section:nth-of-type(2) {
 			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
@@ -226,10 +226,10 @@
 		section:nth-of-type(5) {
 			background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 		}
-  section ul li {
-			color: #fff;
-      font-size: 1.2em;
-  }
+		section ul li {
+					color: #fff;
+			font-size: 1.2em;
+		}
 		footer {
 			background-color: #0E1218;
 			color: #fff;
@@ -309,6 +309,10 @@
 		footer p {
       padding: 15px 0;
 			font-size: 14px;
+		}
+		section ul li {
+					color: #fff;
+			font-size: 1.2em;
 		}
 	}
   .centerfoot {
@@ -415,6 +419,22 @@
         font-weight: bold;
         cursor: pointer;
     }
+	.ratelink {
+		background-color: rgba(250,250,250,0.5);
+		color: blue;
+		font-size: 1.2em;
+		padding: 5px;
+		margin: 15px;
+		border-radius: 5px;
+	}
+	.spanlink {
+		width: 100%;
+		/* border: 1px solid white; */
+		text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		padding: 5px;
+		line-height: 40px;;
+	}
 	</style>
 </head>
 <body>
@@ -467,7 +487,13 @@
           <li>Поглиблена англійська з Green Country</li>
           <li>Ігрова математика, логіка</li>
           <li>Проєктна, дослідницька діяльність</li>
-          <li>ІТ та основи програмування -  <a href="rating2.html">II клас</a>, <a href="rating3.html">III клас</a>, <a href="rating4.html">IV клас</a></li>
+          <li class="spanlink">ІТ та основи програмування -
+			<span >
+			<a class="ratelink" href="rating2.html">II клас</a>
+			<a class="ratelink" href="rating3.html">III клас</a>
+			<a class="ratelink" href="rating4.html">IV клас</a>
+		</span>
+		</li>
           <li>Фінансова грамотність з ІІІ класу</li>
           <li>Заняття з психологом</li>
           <li>Живопис, ленд-арт </li>
@@ -556,6 +582,7 @@
       </ul>
       <hr class="hrfoot" />
       <p class="centerfoot"> Приватна школа для обдарованих дітей Discovery. <br />Всі права захищені &copy; 2023</p>
+	  <p id="screensize"></p>
     </div>
 	</footer>
   
@@ -622,6 +649,12 @@
     closeBtn.addEventListener('click', () => {
         lightbox.style.display = 'none';
     });
+
+	const screenWidth = window.screen.width
+	const screenHeight = window.screen.height
+	const pageWidth = document.documentElement.scrollWidth
+	const pageHeight = document.documentElement.scrollHeight
+	document.getElementById("screensize").innerHTML = '<center> screenWidth = ' + screenWidth + ' ' + 'screenHeight = ' + screenHeight + '<br /> ' + 'pageWidth =  ' + pageWidth + ' ' + 'pageHeight = ' + pageHeight + '</center>';
   </script>
 </body>
 </html>
