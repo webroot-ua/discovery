@@ -71,13 +71,14 @@
     ];
 
     function addStudent(student) {
+        const key = `&#128273;`;
         const studentDiv = document.createElement("div");
         const studentImg = document.createElement("img");
         studentImg.src = 'images/' + student.photo;
         studentImg.alt = student.name;
         studentImg.classList.add("student-img");
         const gradeParagraph = document.createElement("p");
-        gradeParagraph.textContent = `${student.name}: ${student.grade} балів`;
+        gradeParagraph.textContent = `${student.name}: ${student.grade}`;
         gradeParagraph.classList.add("grade");
         studentDiv.appendChild(studentImg);
         studentDiv.appendChild(gradeParagraph);
