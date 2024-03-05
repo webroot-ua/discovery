@@ -563,26 +563,25 @@
     </div>
 	</section>
 	<footer id="contacts">
-    <div class="column">
-      <div class="centerfoot">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9138025518705!2d30.639053615894312!3d50.12720457943203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4971b32f66721%3A0xcfc45dad98ddaa7a!2z0KHQvtGB0L3QvtCy0LjQuSDQvNGW0LrRgNC-0YDQsNC50L7QvSwgMiwg0J7QsdGD0YXRltCyLCDQmtC40ZfQstGB0YzQutCwINC-0LHQuy4sIDA4NzAx!5e1!3m2!1sru!2sua!4v1680878584716!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <br />
-      <div id="window-size" class="text-center text-dark"></div>
-    </div>
-    <div class="column">
-      <h2 class="centerfoot">Контактна інформація для батьків</h2>
-      <p class="m-3">Якщо у вас виникли запитання або ви хочете запланувати візит, будь ласка, не соромтеся зв’язатися з нами!</p>
-      <hr class="hrfoot" />
-      <ul>
-        <li>Мобільний телефон: 050 709 3922</li>
-        <li>Наша адреса: м.Обухів, мікрорайон Сосновий, 2</li>
-        <li>Працюємо: повний день з 8:30 до 18:00</li>
-      </ul>
-      <hr class="hrfoot" />
-      <p class="centerfoot"> Приватна школа для обдарованих дітей Discovery. <br />Всі права захищені &copy; 2023</p>
-	  <p id="screensize"></p>
-    </div>
+		<div class="column">
+		<div class="centerfoot">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9138025518705!2d30.639053615894312!3d50.12720457943203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4971b32f66721%3A0xcfc45dad98ddaa7a!2z0KHQvtGB0L3QvtCy0LjQuSDQvNGW0LrRgNC-0YDQsNC50L7QvSwgMiwg0J7QsdGD0YXRltCyLCDQmtC40ZfQstGB0YzQutCwINC-0LHQuy4sIDA4NzAx!5e1!3m2!1sru!2sua!4v1680878584716!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<br />
+		<div id="window-size" class="text-center text-dark"></div>
+		</div>
+		<div class="column">
+		<h2 class="centerfoot">Контактна інформація для батьків</h2>
+		<p class="m-3">Якщо у вас виникли запитання або ви хочете запланувати візит, будь ласка, не соромтеся зв’язатися з нами!</p>
+		<hr class="hrfoot" />
+		<ul>
+			<li>Мобільний телефон: 050 709 3922</li>
+			<li>Наша адреса: м.Обухів, мікрорайон Сосновий, 2</li>
+			<li>Працюємо: повний день з 8:30 до 18:00</li>
+		</ul>
+		<hr class="hrfoot" />
+		<p class="centerfoot"> Приватна школа для обдарованих дітей Discovery. <br />Всі права захищені &copy; 2023</p>
+		</div>
 	</footer>
   
   <script>
@@ -630,30 +629,24 @@
 			}, 5000);
 		};
 	</script>  
-  <script>
-    const gallery = document.querySelector('.gallery');
-    const images = document.querySelectorAll('.gallery img');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImage = document.querySelector('.lightbox img');
-    const closeBtn = document.querySelector('.lightbox');
+  	<script>
+		const gallery = document.querySelector('.gallery');
+		const images = document.querySelectorAll('.gallery img');
+		const lightbox = document.querySelector('.lightbox');
+		const lightboxImage = document.querySelector('.lightbox img');
+		const closeBtn = document.querySelector('.lightbox');
 
-    images.forEach(image => {
-        image.addEventListener('click', () => {
-            const src = image.getAttribute('src');
-            lightboxImage.setAttribute('src', src);
-            lightbox.style.display = 'flex';
-        });
-    });
+		images.forEach(image => {
+			image.addEventListener('click', () => {
+				const src = image.getAttribute('src');
+				lightboxImage.setAttribute('src', src);
+				lightbox.style.display = 'flex';
+			});
+		});
 
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
-
-	const screenWidth = window.screen.width
-	const screenHeight = window.screen.height
-	const pageWidth = document.documentElement.scrollWidth
-	const pageHeight = document.documentElement.scrollHeight
-	document.getElementById("screensize").innerHTML = '<center> screenWidth = ' + screenWidth + ' ' + 'screenHeight = ' + screenHeight + '<br /> ' + 'pageWidth =  ' + pageWidth + ' ' + 'pageHeight = ' + pageHeight + '</center>';
-  </script>
+		closeBtn.addEventListener('click', () => {
+			lightbox.style.display = 'none';
+		});
+	</script>
 </body>
 </html>
