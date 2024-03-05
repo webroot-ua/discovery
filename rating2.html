@@ -79,7 +79,7 @@
         studentImg.alt = student.name;
         studentImg.classList.add("student-img");
         const gradeParagraph = document.createElement("p");
-        gradeParagraph.textContent = `${student.name}: ${student.grade}`;
+        gradeParagraph.innerHTML = `${student.name}: ${student.grade} &#128273;`;
         gradeParagraph.classList.add("grade");
         studentDiv.appendChild(studentImg);
         studentDiv.appendChild(gradeParagraph);
