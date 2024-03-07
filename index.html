@@ -132,12 +132,25 @@
 			z-index: 1;
       width: 100%;
 		}
+		section h1 {
+			color: #fff;
+			font-size: 50px;
+			font-weight: 700;
+			text-align: center;
+			text-shadow: 2px 2px 4px rgba(255,0,255,0.7);
+			margin: 0;
+			padding: 0;
+			line-height: 1;
+			text-transform: uppercase;
+/*			letter-spacing: 5px;*/
+			animation: fadeInDown 1s ease;
+		}
 		section h2 {
 			color: #fff;
 			font-size: 40px;
 			font-weight: 700;
 			text-align: center;
-			text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 			margin: 0;
 			padding: 0;
 			line-height: 1.2;
@@ -199,7 +212,21 @@
 			background-color: rgba(0,0,0,0.5);
 			z-index: -1;
 		}
+		
 		section:nth-of-type(1) {
+			background-image: url('images/flowers.jpg');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: top;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: inherit;
+		}
+   
+		section:nth-of-type(2) {
 			background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 			background-attachment: fixed;
 			background-size: cover;
@@ -211,14 +238,10 @@
 			flex-direction: column;
 			position: relative;
 		}
-		section:nth-of-type(2) {
-			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
-		}
-    /*
 		section:nth-of-type(3) {
 			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
 		}
-    */
+    
 		section:nth-of-type(4) {
 			background-image: url('https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
 		}
@@ -436,6 +459,64 @@
 		padding: 5px;
 		line-height: 40px;
 	}
+
+	.divx {
+        max-width: 765px;
+        max-height: 500px;
+        width: 50vw;
+        height: 50vh;
+        min-width: 360px;
+        min-height: 250px;
+        box-shadow: 16px 14px 20px #0000008c;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .divx::before{
+        content: "";
+        background-image: conic-gradient(
+            #ff0052 20deg,
+            transparent 120deg
+        );
+        width: 150%;
+        height: 150%;
+        position: absolute;
+        animation: rotate 2s linear infinite;
+    }
+    .divx::after {
+    content: "";
+    width: 95%;
+    height: 95%;
+    background: url('images/teachers.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0052;
+    font-size: larger;
+    letter-spacing: 5px;
+    box-shadow: inset 20px 20px 20px #0000008c;
+}
+    @keyframes rotate {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(-360deg);
+        }
+    }
+    .spring {
+    	margin: 50px auto;
+			font-style: italic;
+			color: #fff;
+    }
 	</style>
 </head>
 <body>
@@ -458,6 +539,12 @@
 	<header id="home">
 		<h1><span class="display-4">Ласкаво просимо<br />до школи для обдарованих дітей</span><br /><span class="display-1"><strong>Discovery School</strong></span></h1>
 	</header>
+	<section id="spring">
+		<div class="divx">
+		</div>
+		<h1><span class="display-3 spring">З весною, мої шановні колеги!</span><br />
+			<span class="display-6 spring">Нехай ваші класи будуть так само яскраві і кольорові, як перші весняні квіти, що розцвітають під променями сонця.</span></h1>
+		</section>
 	<section id="about">
     <div class="container">
       <h2 class="display-4">Discovery School <br />Перша альтернативна школа в Обухові</h2>
